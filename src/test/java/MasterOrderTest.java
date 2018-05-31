@@ -17,4 +17,28 @@ public class MasterOrderTest {
 		// Assert
 		Assert.assertEquals(expectedListSize, underTest);
 	}
+	
+	@Test
+	public void shouldReturnTotalNumberOfBoxes() {
+		// Arrange
+		
+		// Act
+		masterOrder.addOrder(new CookieOrder("Thin Mints", 3));
+		int underTest = masterOrder.getTotalBoxes();
+		int expected = 3;
+		
+		Assert.assertEquals(expected, underTest);
+		
+		masterOrder.addOrder(new CookieOrder("Samoas", 2));
+		underTest = masterOrder.getTotalBoxes();
+		expected = 5;
+		
+		Assert.assertEquals(expected, underTest);
+	}
 }
+
+
+
+
+
+
